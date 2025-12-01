@@ -24,7 +24,7 @@ Can be easily integrated into:
 
 ## Getting Started
 
-###Die
+### Die
 
 Get max value of a specific die
 ```cs
@@ -46,7 +46,7 @@ retrieve the result of the last roll
 var storedResult = die.Result;
 ```
 
-###Hand
+### Hand
 
 instantiate a hand with two different dice
 ```cs
