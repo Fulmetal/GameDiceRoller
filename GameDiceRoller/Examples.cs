@@ -13,7 +13,7 @@ internal class Examples
     /// This method includes the following operations:
     /// - Fetching the maximum value of a specified die type using GetDieMaxValue.
     /// - Instantiating the Die class with a defined die type.
-    /// - Rolling the die to obtain a random value within the specified range.
+    /// - Rolling the die to get a random value within the specified range.
     /// - Accessing the result of the last roll through the Result property.
     /// </remarks>
     private void DieExample()
@@ -40,7 +40,7 @@ internal class Examples
     /// This method includes the following operations:
     /// - Creating a hand with dice of different types using a list of dice.
     /// - Creating a hand with multiple dice of the same type using a die type and quantity.
-    /// - Rolling all dice in a hand to obtain their total sum.
+    /// - Rolling all dice in a hand to get their total sum.
     /// - Accessing the roll results of specific dice in the hand.
     /// </remarks>
     private void HandExample()
