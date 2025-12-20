@@ -1,0 +1,23 @@
+name: Publish to NuGet and GitHub Packages
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '10.0.x'
+      - name: Build
+        run: dotnet build -c Release
+      - name: Pack
+        run: dotnet pack -c Release --output .
+      - name: Publish to NuGet
+        run: dotnet nuget push "*.nupkg" -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+      - name: Publish to GitHub Packages
+        run: dotnet nuget push "*.nupkg" -k ${{ secrets.GIT_HUB_TOKEN }} -s https://nuget.pkg.github.com/fulmetal/index.json
